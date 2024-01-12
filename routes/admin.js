@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
+const pets = [];
 
 
 router.use("/add-pets", (req, res, next) => {
@@ -9,8 +10,9 @@ router.use("/add-pets", (req, res, next) => {
 });
 
 router.post("/pet", (req, res, next) => {
-    console.log(req.body);
+    pets.push({title: req.body.title});
     res.redirect("/");
 });
 
-module.exports = router;
+exports.routes = router;
+exports.pets = pets;

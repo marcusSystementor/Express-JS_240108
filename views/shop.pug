@@ -1,0 +1,25 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title= docTitle
+    link(rel="stylesheet", href="/css/shop.css")
+  body
+    header
+      nav
+        ul
+          li
+            a(href="/") Shop
+          li
+            a(href="/admin/add-pets") Add Pets
+    main
+      if pet && pet.length > 0
+        h1 My Pets
+        p List of all the Pets in the store...
+        each pets in pet
+         
+          h1= pets.title
+      else
+        p No pets available
